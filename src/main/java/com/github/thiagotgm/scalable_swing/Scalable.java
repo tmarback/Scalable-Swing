@@ -19,6 +19,22 @@ import java.awt.Dimension;
 public interface Scalable {
     
     /**
+     * Helper to obtain a Dimension object initialized to given width and height
+     * in double precision.
+     *
+     * @param width Width of the dimension.
+     * @param height Height of the dimension.
+     * @return Dimension with the given width and height.
+     */
+    public static Dimension getDimension( double width, double height ) {
+        
+        Dimension dim = new Dimension();
+        dim.setSize( width, height );
+        return dim;
+        
+    }
+    
+    /**
      * Retrieves the minimum size of the component, scaled to the monitor's resolution.
      *
      * @return The minimum size of the component, in inches.
@@ -64,11 +80,10 @@ public interface Scalable {
      * @param d The preferred dimensions of the component, in inches.
      * @see javax.swing.JComponent#setPreferredSize(Dimension)
      */
-    void setScaledPreferred( Dimension d );
+    void setScaledPreferredSize( Dimension d );
     
     /**
-     * Recalculates all dimensions to scale on the current monitor resolution.<p>
-     * Should be called 
+     * Recalculates all dimensions to scale on the current monitor resolution.
      */
     void rescale();
 
