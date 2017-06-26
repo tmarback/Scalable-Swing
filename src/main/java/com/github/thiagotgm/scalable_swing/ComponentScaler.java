@@ -19,11 +19,10 @@ import javax.swing.JComponent;
  * @version 1.0
  * @author ThiagoTGM
  * @since 2017-06-25
- * @param <T> Type of the component to be managed.
  */
-public class ComponentScaler<T extends JComponent> implements ScalableComponent {
+public class ComponentScaler implements ScalableComponent {
     
-    private T target;
+    private JComponent target;
     private int resolution;
     
     private RealDimension actualMinSize;
@@ -38,7 +37,7 @@ public class ComponentScaler<T extends JComponent> implements ScalableComponent 
      *
      * @param target Component to be scaled.
      */
-    public ComponentScaler( T target ) {
+    public ComponentScaler( JComponent target ) {
         
         this.target = target;
         this.resolution = target.getToolkit().getScreenResolution();
