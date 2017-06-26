@@ -32,9 +32,9 @@ public abstract class ScaleManager {
      *
      * @param dim Dimension to be scaled (in inches).
      * @param resolution Resolution to scale to.
-     * @return The scaled dimension, accounting for the current scaling multipliers.
+     * @return The scaled dimension, in pixels, accounting for the current scaling multipliers.
      */
-    public static Dimension scale( Dimension dim, int resolution ) {
+    public static Dimension scale( RealDimension dim, int resolution ) {
         
         resolution *= scale; // Accounts for current scale.
         double width = dim.getWidth() * resolution; // Calculate width and height.
@@ -49,14 +49,14 @@ public abstract class ScaleManager {
      *
      * @param dim Dimension to be scaled (in pixels).
      * @param resolution Resolution the dimension was scaled to.
-     * @return The original dimension, accounting for the current scaling multipliers.
+     * @return The real dimension, in inches, accounting for the current scaling multipliers.
      */
-    public static Dimension unscale( Dimension dim, int resolution ) {
+    public static RealDimension unscale( Dimension dim, int resolution ) {
         
         resolution *= scale; // Accounts for current scale.
         double width = dim.getWidth() / resolution; // Calculate width and height.
         double height = dim.getHeight() / resolution;
-        return Scalable.getDimension( width, height ); // Package into dimension.
+        return new RealDimension( width, height ); // Package into dimension.
         
     }
     

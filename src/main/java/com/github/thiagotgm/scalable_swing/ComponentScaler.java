@@ -26,11 +26,11 @@ public class ComponentScaler<T extends JComponent> implements ScalableComponent 
     private T target;
     private int resolution;
     
-    private Dimension actualMinSize;
+    private RealDimension actualMinSize;
     private Dimension scaledMinSize;
-    private Dimension actualMaxSize;
+    private RealDimension actualMaxSize;
     private Dimension scaledMaxSize;
-    private Dimension actualPreferredSize;
+    private RealDimension actualPreferredSize;
     private Dimension scaledPreferredSize;
     
     /**
@@ -52,7 +52,7 @@ public class ComponentScaler<T extends JComponent> implements ScalableComponent 
      * @see javax.swing.JComponent#getMinimumSize()
      */
     @Override
-    public Dimension getScaledMinimumSize() {
+    public RealDimension getScaledMinimumSize() {
         
         return actualMinSize;
 
@@ -65,7 +65,7 @@ public class ComponentScaler<T extends JComponent> implements ScalableComponent 
      * @see javax.swing.JComponent#getMaximumSize()
      */
     @Override
-    public Dimension getScaledMaximumSize() {
+    public RealDimension getScaledMaximumSize() {
 
         return actualMaxSize;
         
@@ -78,14 +78,14 @@ public class ComponentScaler<T extends JComponent> implements ScalableComponent 
      * @see javax.swing.JComponent#getPrefferedSize()
      */
     @Override
-    public Dimension getScaledPreferredSize() {
+    public RealDimension getScaledPreferredSize() {
 
         return actualPreferredSize;
         
     }
 
     @Override
-    public void setScaledMinimumSize( Dimension d ) {
+    public void setScaledMinimumSize( RealDimension d ) {
 
         actualMinSize = d;
         scaledMinSize = ScaleManager.scale( d, resolution );
@@ -94,7 +94,7 @@ public class ComponentScaler<T extends JComponent> implements ScalableComponent 
     }
 
     @Override
-    public void setScaledMaximumSize( Dimension d ) {
+    public void setScaledMaximumSize( RealDimension d ) {
 
         actualMaxSize = d;
         scaledMaxSize = ScaleManager.scale( d, resolution );
@@ -103,7 +103,7 @@ public class ComponentScaler<T extends JComponent> implements ScalableComponent 
     }
 
     @Override
-    public void setScaledPreferredSize( Dimension d ) {
+    public void setScaledPreferredSize( RealDimension d ) {
 
         actualPreferredSize = d;
         scaledPreferredSize = ScaleManager.scale( d, resolution );
