@@ -21,7 +21,7 @@ import javax.swing.JComponent;
  * @since 2017-06-25
  * @param <T> Type of the component to be managed.
  */
-public class ComponentScaler<T extends JComponent> implements Scalable {
+public class ComponentScaler<T extends JComponent> implements ScalableComponent {
     
     private T target;
     private int resolution;
