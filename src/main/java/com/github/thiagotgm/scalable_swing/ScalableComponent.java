@@ -44,28 +44,31 @@ public interface ScalableComponent extends Scalable {
     RealDimension getScaledPreferredSize();
     
     /**
-     * Sets the minimum size of the component to a scaled value.
+     * Sets the minimum size of the component to a scaled value, representing a
+     * real dimension on the monitor.
      *
-     * @param d The minimum dimensions of the component, in inches.
+     * @param minimumSize The minimum dimensions of the component, in inches.
      * @see javax.swing.JComponent#setMinimumSize(Dimension)
      */
-    void setScaledMinimumSize( RealDimension d );
+    void setScaledMinimumSize( RealDimension minimumSize );
     
     /**
-     * Sets the maximum size of the component to a scaled value.
+     * Sets the maximum size of the component to a scaled value, representing a
+     * real dimension on the monitor.
      *
-     * @param d The maximum dimensions of the component, in inches.
+     * @param maximumSize The maximum dimensions of the component, in inches.
      * @see javax.swing.JComponent#setMaximumSize(Dimension)
      */
-    void setScaledMaximumSize( RealDimension d );
+    void setScaledMaximumSize( RealDimension maximumSize );
     
     /**
-     * Sets the preferred size of the component to a scaled value.
+     * Sets the preferred size of the component to a scaled value, representing a
+     * real dimension on the monitor.
      *
-     * @param d The preferred dimensions of the component, in inches.
+     * @param preferredSize The preferred dimensions of the component, in inches.
      * @see javax.swing.JComponent#setPreferredSize(Dimension)
      */
-    void setScaledPreferredSize( RealDimension d );
+    void setScaledPreferredSize( RealDimension preferredSize );
     
     /**
      * Recalculates all sizes to scale on the current monitor resolution.<br>

@@ -84,28 +84,28 @@ public class ComponentScaler implements ScalableComponent {
     }
 
     @Override
-    public void setScaledMinimumSize( RealDimension d ) {
+    public void setScaledMinimumSize( RealDimension minimumSize ) {
 
-        actualMinSize = d;
-        scaledMinSize = ScaleManager.scale( d, resolution );
+        actualMinSize = minimumSize;
+        scaledMinSize = ScaleManager.scale( minimumSize, resolution );
         target.setMinimumSize( scaledMinSize );
 
     }
 
     @Override
-    public void setScaledMaximumSize( RealDimension d ) {
+    public void setScaledMaximumSize( RealDimension maximumSize ) {
 
-        actualMaxSize = d;
-        scaledMaxSize = ScaleManager.scale( d, resolution );
+        actualMaxSize = maximumSize;
+        scaledMaxSize = ScaleManager.scale( maximumSize, resolution );
         target.setMaximumSize( scaledMaxSize );
 
     }
 
     @Override
-    public void setScaledPreferredSize( RealDimension d ) {
+    public void setScaledPreferredSize( RealDimension preferredSize ) {
 
-        actualPreferredSize = d;
-        scaledPreferredSize = ScaleManager.scale( d, resolution );
+        actualPreferredSize = preferredSize;
+        scaledPreferredSize = ScaleManager.scale( preferredSize, resolution );
         target.setPreferredSize( scaledPreferredSize );
 
     }
@@ -132,6 +132,18 @@ public class ComponentScaler implements ScalableComponent {
             target.setPreferredSize( scaledPreferredSize );
         }
 
+    }
+    
+    /**
+     * Retrieves the resolution currently being used by this Scaler to scale the
+     * target component.
+     *
+     * @return The current resolution.
+     */
+    public int getResolution() {
+        
+        return resolution;
+        
     }
 
 }
