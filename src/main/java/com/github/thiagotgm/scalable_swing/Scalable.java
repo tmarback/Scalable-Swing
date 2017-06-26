@@ -10,7 +10,10 @@ package com.github.thiagotgm.scalable_swing;
 import java.awt.Dimension;
 
 /**
- * Interface that defines a component capable of scaling with monitor resolution.
+ * Interface that defines a component capable of scaling with monitor resolution.<br>
+ * Behavior of getters and {@link #rescale()} in case a certain scaled size was not specified
+ * (the corresponding size might have been set directly using JComponent size setters) is
+ * dependent on implementation.
  *
  * @version 1.0
  * @author ThiagoTGM
@@ -83,7 +86,8 @@ public interface Scalable {
     void setScaledPreferredSize( Dimension d );
     
     /**
-     * Recalculates all dimensions to scale on the current monitor resolution.
+     * Recalculates all sizes to scale on the current monitor resolution.<br>
+     * If a certain size was not set it is not recalculated.
      */
     void rescale();
 
