@@ -14,3 +14,23 @@ Planned features:
 - Allowing components to register themselves to rescale whenever the resolution or scaling values change;
 - Wrapper for AWT components, for some classes used on layout management;
 - Wrappers for non-component but commonly used types (such as JFrame and Insets).
+
+To use the library with Maven, add this as part of your `pom.xml` (where `@VERSION@` should be replaced by the desired release version):
+```
+<repositories>
+  ...
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+...
+<dependencies>
+  ...
+  <dependency>
+    <groupId>com.github.ThiagoTGM</groupId>
+    <artifactId>Scalable-Swing</artifactId>
+    <version>@VERSION@</version>
+  </dependency>
+</dependencies>
+```
