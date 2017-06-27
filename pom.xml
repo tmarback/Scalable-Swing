@@ -2,13 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.thiagotgm</groupId>
-    <artifactId>scalable-swing</artifactId>
+    <groupId>com.github.ThiagoTGM</groupId>
+    <artifactId>Scalable-Swing</artifactId>
     <version>0.2.0</version>
     <packaging>jar</packaging>
 	
-    <name>scalable-swing</name>
-    <url>https://github.com/ThiagoTGM/Scalable-Swing.git</url>
+    <name>Scalable-Swing</name>
+    <url>https://github.com/ThiagoTGM/Scalable-Swing</url>
+    <description>A wrapper library for Java Swing to allow rescaling components automatically with monitor resolution.</description>
 	
     <properties>
     
