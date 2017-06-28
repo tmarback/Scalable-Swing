@@ -13,7 +13,7 @@ package com.github.thiagotgm.scalable_swing;
  * (the corresponding size might have been set directly using JComponent size setters) is
  * dependent on implementation.
  *
- * @version 2.0
+ * @version 2.0.0
  * @author ThiagoTGM
  * @since 2017-06-25
  */
@@ -71,7 +71,7 @@ public interface ScalableComponent extends Scalable {
     void setScaledPreferredSize( RealDimension preferredSize );
     
     /**
-     * Recalculates all sizes to scale on the current monitor resolution.<br>
+     * Recalculates all sizes to scale on the current monitor resolution and scaling settings.<br>
      * If a certain size was not set it is not recalculated.
      */
     @Override

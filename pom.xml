@@ -12,12 +12,12 @@
 
     <groupId>com.github.ThiagoTGM</groupId>
     <artifactId>Scalable-Swing</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
 	
     <name>Scalable-Swing</name>
     <url>https://github.com/ThiagoTGM/Scalable-Swing</url>
-    <description>A wrapper library for Java Swing to allow rescaling components automatically with monitor resolution.</description>
+    <description>A wrapper library for Java Swing to allow rescaling components automatically with monitor resolution and modifiable scaling settings.</description>
 	
     <properties>
     

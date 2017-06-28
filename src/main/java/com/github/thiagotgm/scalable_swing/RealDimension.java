@@ -14,7 +14,7 @@ import java.io.Serializable;
  * Encapsulates a real-world dimension to be used by UI before scaling to resolution.<p>
  * Essentially an alternate to {@link java.awt.Dimension} that keeps double-precision dimensions.
  *
- * @version 1.0
+ * @version 1.0.0
  * @author ThiagoTGM
  * @since 2017-06-26
  */

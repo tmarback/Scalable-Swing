@@ -1,5 +1,5 @@
 # Scalable-Swing
-Container for Java Swing components that allow them to scale according to screen resolution.
+Container for Java Swing components that allow them to scale according to screen resolution (more specifically, DPI).
 Also allows setting scaling values through ScaleManager to make all scaled components larger or smaller.
 
 Currently allows two ways to make components scalable:
@@ -34,3 +34,5 @@ To use the library with Maven, add this as part of your `pom.xml` (where `@VERSI
   </dependency>
 </dependencies>
 ```
+
+OBS: This implementation is dependent on `Toolkit#getScreenResolution()`, which does not always return the accurate DPI value for a screen, and so the real screen dimensions might not reflect what was set through this API with perfect accuracy (it might be smaller than intended in some monitors).

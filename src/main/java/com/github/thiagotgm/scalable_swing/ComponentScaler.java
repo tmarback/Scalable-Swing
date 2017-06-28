@@ -16,14 +16,13 @@ import javax.swing.JComponent;
  * Changes made to the component size directly (using the JComponent methods) are not
  * reflected in the sizes set in this controller.
  *
- * @version 1.0
+ * @version 1.1.0
  * @author ThiagoTGM
  * @since 2017-06-25
  */
 public class ComponentScaler implements ScalableComponent {
     
     private JComponent target;
-    private int resolution;
     
     private RealDimension actualMinSize;
     private Dimension scaledMinSize;
@@ -40,12 +39,12 @@ public class ComponentScaler implements ScalableComponent {
     public ComponentScaler( JComponent target ) {
         
         this.target = target;
-        this.resolution = target.getToolkit().getScreenResolution();
         
     }
 
     /**
-     * Retrieves the minimum size of the component, scaled to the monitor's resolution, if a scaled size was set.
+     * Retrieves the minimum size of the component, scaled to the monitor's resolution and current scaling values,
+     * if a scaled size was set.
      *
      * @return The minimum size of the component, in inches, or null if no scaled minimum size was set.
      * @see javax.swing.JComponent#getMinimumSize()
@@ -58,7 +57,8 @@ public class ComponentScaler implements ScalableComponent {
     }
 
     /**
-     * Retrieves the maximum size of the component, scaled to the monitor's resolution, if a scaled size was set.
+     * Retrieves the maximum size of the component, scaled to the monitor's resolution  and current scaling values,
+     * if a scaled size was set.
      *
      * @return The maximum size of the component, in inches, or null if no scaled maximum size was set.
      * @see javax.swing.JComponent#getMaximumSize()
@@ -71,7 +71,8 @@ public class ComponentScaler implements ScalableComponent {
     }
 
     /**
-     * Retrieves the preferred size of the component, scaled to the monitor's resolution, if a scaled size was set.
+     * Retrieves the preferred size of the component, scaled to the monitor's resolution and current scaling values,
+     * if a scaled size was set.
      *
      * @return The preferred size of the component, in inches, or null if no scaled preferred size was set.
      * @see javax.swing.JComponent#getPrefferedSize()
@@ -87,7 +88,7 @@ public class ComponentScaler implements ScalableComponent {
     public void setScaledMinimumSize( RealDimension minimumSize ) {
 
         actualMinSize = minimumSize;
-        scaledMinSize = ScaleManager.scale( minimumSize, resolution );
+        scaledMinSize = ScaleManager.scale( minimumSize );
         target.setMinimumSize( scaledMinSize );
 
     }
@@ -96,7 +97,7 @@ public class ComponentScaler implements ScalableComponent {
     public void setScaledMaximumSize( RealDimension maximumSize ) {
 
         actualMaxSize = maximumSize;
-        scaledMaxSize = ScaleManager.scale( maximumSize, resolution );
+        scaledMaxSize = ScaleManager.scale( maximumSize );
         target.setMaximumSize( scaledMaxSize );
 
     }
@@ -105,45 +106,32 @@ public class ComponentScaler implements ScalableComponent {
     public void setScaledPreferredSize( RealDimension preferredSize ) {
 
         actualPreferredSize = preferredSize;
-        scaledPreferredSize = ScaleManager.scale( preferredSize, resolution );
+        scaledPreferredSize = ScaleManager.scale( preferredSize );
         target.setPreferredSize( scaledPreferredSize );
 
     }
 
     /**
-     * Recalculates all dimensions to scale on the current monitor resolution.<br>
+     * Recalculates all dimensions to scale on the current monitor resolution and scaling properties.<br>
      * This overrides any direct changes to the component size (that used the JComponent methods)
      * with the scaled sizes last set through this manager.
      */
     @Override
     public void rescale() {
 
-        resolution = target.getToolkit().getScreenResolution(); // Ensures resolution is up to date.
         if ( actualMinSize != null ) { // Rescales minimum size if one was set.
-            scaledMinSize = ScaleManager.scale( actualMinSize, resolution );
+            scaledMinSize = ScaleManager.scale( actualMinSize );
             target.setMinimumSize( scaledMinSize );
         }
         if ( actualMaxSize != null ) { // Rescales maximum size if one was set.
-            scaledMaxSize = ScaleManager.scale( actualMaxSize, resolution );
+            scaledMaxSize = ScaleManager.scale( actualMaxSize );
             target.setMaximumSize( scaledMaxSize );
         }
         if ( actualPreferredSize != null ) { // Rescales preferred size if one was set.
-            scaledPreferredSize = ScaleManager.scale( actualPreferredSize, resolution );
+            scaledPreferredSize = ScaleManager.scale( actualPreferredSize );
             target.setPreferredSize( scaledPreferredSize );
         }
 
-    }
-    
-    /**
-     * Retrieves the resolution currently being used by this Scaler to scale the
-     * target component.
-     *
-     * @return The current resolution.
-     */
-    public int getResolution() {
-        
-        return resolution;
-        
     }
 
 }

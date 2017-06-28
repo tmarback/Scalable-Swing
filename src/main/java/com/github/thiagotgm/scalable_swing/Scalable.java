@@ -12,7 +12,7 @@ import java.awt.Dimension;
 /**
  * Defines a GUI element that can be rescaled to the current monitor resolution.
  *
- * @version 1.0
+ * @version 1.0.0
  * @author ThiagoTGM
  * @since 2017-06-26
  */
@@ -38,7 +38,7 @@ public interface Scalable {
     }
 
     /**
-     * Recalculates size to scale on the current monitor resolution.
+     * Recalculates all sizes to scale on the current monitor resolution and scaling settings.
      */
     void rescale();
 

@@ -81,7 +81,7 @@ import javax.swing.event.AncestorListener;
  * <p>
  * The wrapped component can be retrieved at any point using {@link #getTarget()}.
  *
- * @version 1.0
+ * @version 1.1.0
  * @author ThiagoTGM
  * @since 2017-06-26
  * @param <T> The specific component type being wrapped.
@@ -226,7 +226,8 @@ public class ScalableJComponent<T extends JComponent> extends JComponent impleme
     public void setMinimumSize( Dimension minimumSize ) {
 
         pixelMinSize = minimumSize;
-        scaler.setScaledMinimumSize( ScaleManager.unscale( minimumSize, scaler.getResolution() ) );
+        scaler.setScaledMinimumSize( ScaleManager.unscale( minimumSize ) );
+    
     }
     
     /**
@@ -244,7 +245,7 @@ public class ScalableJComponent<T extends JComponent> extends JComponent impleme
     public void setMaximumSize( Dimension maximumSize ) {
 
         pixelMaxSize = maximumSize;
-        scaler.setScaledMaximumSize( ScaleManager.unscale( maximumSize, scaler.getResolution() ) );
+        scaler.setScaledMaximumSize( ScaleManager.unscale( maximumSize ) );
         
     }
 
@@ -263,7 +264,7 @@ public class ScalableJComponent<T extends JComponent> extends JComponent impleme
     public void setPreferredSize( Dimension preferredSize ) {
 
         pixelPreferredSize = preferredSize;
-        scaler.setScaledPreferredSize( ScaleManager.unscale( preferredSize, scaler.getResolution() ) );
+        scaler.setScaledPreferredSize( ScaleManager.unscale( preferredSize ) );
         
     }
     
