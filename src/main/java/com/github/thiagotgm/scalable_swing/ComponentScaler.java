@@ -22,7 +22,7 @@ import javax.swing.JComponent;
  */
 public class ComponentScaler implements ScalableComponent {
     
-    private JComponent target;
+    private final JComponent target;
     
     private RealDimension actualMinSize;
     private Dimension scaledMinSize;

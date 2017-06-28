@@ -91,8 +91,8 @@ public class ScalableJComponent<T extends JComponent> extends JComponent impleme
     /** Serial UID that represents this class. */
     private static final long serialVersionUID = 8280086683363343596L;
     
-    private T target;
-    private ComponentScaler scaler;
+    private final T target;
+    private final ComponentScaler scaler;
     
     private boolean scalePixelSize;
     private Dimension pixelMinSize;
