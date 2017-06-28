@@ -127,7 +127,7 @@ public abstract class ScaleManager {
     /**
      * Sets the scale for all text.
      *
-     * @param scale The scaling value to be used (1 is 100% scale).
+     * @param textScale The scaling value to be used (1 is 100% scale).
      */
     public static void setTextScale( float textScale ) {
         

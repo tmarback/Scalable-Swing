@@ -75,7 +75,7 @@ public class ComponentScaler implements ScalableComponent {
      * if a scaled size was set.
      *
      * @return The preferred size of the component, in inches, or null if no scaled preferred size was set.
-     * @see javax.swing.JComponent#getPrefferedSize()
+     * @see javax.swing.JComponent#getPreferredSize()
      */
     @Override
     public RealDimension getScaledPreferredSize() {
