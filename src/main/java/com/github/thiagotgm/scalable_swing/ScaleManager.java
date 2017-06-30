@@ -13,7 +13,7 @@ import java.awt.Toolkit;
 /**
  * Manages the scaling properties of program components.
  *
- * @version 2.0.0
+ * @version 3.0.0
  * @author ThiagoTGM
  * @since 2017-06-25
  */

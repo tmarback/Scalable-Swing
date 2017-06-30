@@ -18,7 +18,7 @@ import java.util.Map;
  * All deriveFont methods are applied to the base font (that represents the calling instance
  * without scaling), with the returned instances scaling the derived base font.
  *
- * @version 1.0
+ * @version 1.0.0
  * @author ThiagoTGM
  * @since 2017-06-30
  */

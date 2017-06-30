@@ -101,6 +101,8 @@ public class ScalableJComponent<T extends JComponent> extends JComponent impleme
     
     /**
      * Instantiates a new scalable wrapper for the given component.
+     * <p>
+     * The target's font will <i>not</i> be automatically replaced with a scalable font.
      *
      * @param target Component to be wrapped.
      */

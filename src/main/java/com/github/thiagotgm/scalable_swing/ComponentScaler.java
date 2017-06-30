@@ -34,6 +34,8 @@ public class ComponentScaler implements ScalableComponent {
     
     /**
      * Creates a new Scaler that manages the scaling of a given target.
+     * <p>
+     * The target's font will <i>not</i> be automatically replaced with a scalable font.
      *
      * @param target Component to be scaled.
      */
