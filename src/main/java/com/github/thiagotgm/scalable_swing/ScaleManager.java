@@ -8,7 +8,6 @@
 package com.github.thiagotgm.scalable_swing;
 
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Toolkit;
 
 /**
@@ -22,7 +21,7 @@ public abstract class ScaleManager {
     
     private static final float DEFAULT_SCALE = 1;
     private static final float DEFAULT_TEXT_SCALE = 1;
-    private static final int FONT_DIVISOR = 70; // Arbitrary value, decided by testing.
+    private static final int FONT_FACTOR = 72; // Typographic point size.
     
     private static float scale;
     private static float textScale;
@@ -56,7 +55,7 @@ public abstract class ScaleManager {
     private static void calculateFontMultiplier() {
 
         fontMultiplier = (float) scaleMultiplier * textScale; // Calculate based on resolution and scale value.
-        fontMultiplier /= FONT_DIVISOR; // Reduce to reasonable font size.
+        fontMultiplier /= FONT_FACTOR; // Convert to typographic point size.
                 
     }
     
@@ -99,15 +98,14 @@ public abstract class ScaleManager {
     }
     
     /**
-     * Scales a dimension to the current resolution and the current scaling values.
+     * Scales a font size to the current resolution and the current scaling values.
      *
-     * @param font Font to be scaled. Assumed to not be scaled to any resolution.
-     * @return The scaled resolution, accounting for the current scaling multipliers.
-     * @throws NullPointerException if the font given is null.
+     * @param fontSize Font size (2D) to be scaled.
+     * @return The scaled font size, accounting for the current scaling multipliers.
      */
-    public static Font scale( Font font ) throws NullPointerException {
+    public static float scaleFontSize( float fontSize ) {
         
-        return font.deriveFont( font.getSize2D() * fontMultiplier ); // Create new font.
+        return fontSize * fontMultiplier; // Calculate scaled font size.
         
     }
     
