@@ -8,6 +8,7 @@
 package com.github.thiagotgm.scalable_swing;
 
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.JComponent;
 
@@ -114,7 +115,8 @@ public class ComponentScaler implements ScalableComponent {
     /**
      * Recalculates all dimensions to scale on the current monitor resolution and scaling properties.<br>
      * This overrides any direct changes to the component size (that used the JComponent methods)
-     * with the scaled sizes last set through this manager.
+     * with the scaled sizes last set through this manager.<br>
+     * If the Font in the target is Scalable, it is also rescaled.
      */
     @Override
     public void rescale() {
@@ -130,6 +132,10 @@ public class ComponentScaler implements ScalableComponent {
         if ( actualPreferredSize != null ) { // Rescales preferred size if one was set.
             scaledPreferredSize = ScaleManager.scale( actualPreferredSize );
             target.setPreferredSize( scaledPreferredSize );
+        }
+        Font font = target.getFont();
+        if ( font instanceof Scalable ) {
+            ( (Scalable) font ).rescale(); // Rescale font if supported.
         }
 
     }

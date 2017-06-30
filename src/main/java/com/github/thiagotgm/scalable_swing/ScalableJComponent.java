@@ -159,7 +159,8 @@ public class ScalableJComponent<T extends JComponent> extends JComponent impleme
     /**
      * Recalculates all dimensions to scale on the current monitor resolution.<br>
      * If a certain dimension was not set, or was set as a pixel size and pixel sizes
-     * are set to not be rescaled, it is not recalculated.
+     * are set to not be rescaled, it is not recalculated.<br>
+     * If the component's Font is Scalable, it is also rescaled.
      */
     @Override
     public void rescale() {

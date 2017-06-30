@@ -72,7 +72,8 @@ public interface ScalableComponent extends Scalable {
     
     /**
      * Recalculates all sizes to scale on the current monitor resolution and scaling settings.<br>
-     * If a certain size was not set it is not recalculated.
+     * If a certain size was not set it is not recalculated.<br>
+     * If the Font used in the component is Scalable, it should also be rescaled.
      */
     @Override
     void rescale();
